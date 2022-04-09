@@ -1,27 +1,25 @@
 import Ract from "react";
 import React, { useState } from "react";
 
-const Tarea = () => {
-	const [tarea, setTarea] = useState("");
-
+const Tarea = (props) => {
 	return (
 		<div>
 			<input
 				type="text"
-				value={tarea}
-				onChange={(e) => setTarea(e.target.value)}
+				value={props.tarea}
+				onChange={(e) => props.setTarea(e.target.value)}
 				placeholder="Ingrese tarea"
 			/>
 			<button
 				className="btn btn-success col"
 				onClick={() => {
-					setTarea(tarea);
-					console.log(tarea);
+					props.setLista([...props.lista, props.tarea]);
+					console.log(props.tarea);
 				}}>
 				Guardar
 			</button>
 			<br />
-			<p>{tarea}</p>
+			<p>{props.tarea}</p>
 		</div>
 	);
 };

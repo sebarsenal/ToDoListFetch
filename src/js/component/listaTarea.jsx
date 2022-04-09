@@ -3,12 +3,15 @@ import React, { useState } from "react";
 
 import Tarea from "./tarea.jsx";
 
-const ListaTareas = () => {
-	const [lista, setLista] = useState([]);
+const ListaTareas = (props) => {
 	return (
 		<div>
 			<p>
-				<div></div>
+				<div>
+					{props.lista.map(function (valor, id) {
+						return <li>{valor}</li>;
+					})}
+				</div>
 			</p>
 		</div>
 	);
