@@ -2,6 +2,10 @@ import Ract from "react";
 import React, { useState } from "react";
 
 const Tarea = (props) => {
+	const limpiar = (e) => {
+		props.setTarea("");
+	};
+
 	return (
 		<div>
 			<input
@@ -15,6 +19,7 @@ const Tarea = (props) => {
 				onClick={() => {
 					props.setLista([...props.lista, props.tarea]);
 					console.log(props.tarea);
+					limpiar();
 				}}>
 				Guardar
 			</button>

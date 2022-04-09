@@ -6,13 +6,11 @@ import Tarea from "./tarea.jsx";
 const ListaTareas = (props) => {
 	return (
 		<div>
-			<p>
-				<div>
-					{props.lista.map(function (valor, id) {
-						return <li>{valor}</li>;
-					})}
-				</div>
-			</p>
+			<div>
+				{props.lista.map(function (valor, id) {
+					return <li key={id}>{valor}</li>;
+				})}
+			</div>
 		</div>
 	);
 };
