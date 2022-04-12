@@ -1,6 +1,8 @@
 import Ract from "react";
 import React, { useState } from "react";
 
+//const [tarea, setTarea] = useState("");
+
 const Tarea = (props) => {
 	const limpiar = (e) => {
 		props.setTarea("");
@@ -17,7 +19,10 @@ const Tarea = (props) => {
 			<button
 				className="btn btn-success col"
 				onClick={() => {
-					props.setLista([...props.lista, props.tarea]);
+					props.setLista([
+						...props.lista,
+						{ label: props.tarea, done: false },
+					]);
 					console.log(props.tarea);
 					limpiar();
 				}}>
