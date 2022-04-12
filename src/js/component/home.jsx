@@ -33,8 +33,8 @@ const Home = () => {
 			"https://assets.breatheco.de/apis/fake/todos/user/seba",
 			requestOptions
 		)
-			.then((response) => response.json())
-			.then((data) => setPostId(data.id));
+			.then((putTareas) => putTareas.json())
+			.then((data) => lista(data));
 	};
 
 	return (
